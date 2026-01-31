@@ -1,0 +1,34 @@
+%% file: maps-font-umbrella-before.svg
+%% title: Before - Umbrella header coupling
+flowchart LR
+  subgraph FEATURES[Features hundreds of files]
+    F1[Maps UI screens]
+    F2[Search / Explore]
+    F3[Navigation / ETA]
+    F4[Shared components usage]
+  end
+
+  subgraph DS_UMBRELLA[Design system umbrella header / module]
+    U[DesignSystem umbrella]
+  end
+
+  subgraph SUBSYSTEMS[Design system subsystems behind umbrella]
+    T[Typography]
+    C[Color tokens]
+    I[Icons]
+    L[Layout metrics / spacing]
+    A[Appearance / theming]
+    X[Categories / utilities]
+  end
+
+  FEATURES -->|import umbrella| U
+  U --> T
+  U --> C
+  U --> I
+  U --> L
+  U --> A
+  U --> X
+
+  T --> P1[Font drift / scaling inconsistency]
+  U --> P2[Transitive import coupling]
+  P2 --> R[Removing typography breaks unrelated paths]

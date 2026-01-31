@@ -1,0 +1,16 @@
+%% file: maps-font-decision-tree.svg
+%% title: Migration strategy decision tree
+flowchart TB
+  D0{Font migration approach}
+  D0 --> D1[Big bang replacement]
+  D0 --> D2[Incremental via shim and tokens]
+
+  D1 --> R1{Large surface area}
+  R1 -->|Yes| O1[High risk and hard rollback]
+  R1 -->|No| O2[Possible but rare at scale]
+
+  D2 --> R2{Multi app support}
+  R2 -->|Yes| O3[Best path for shared API and safe rollout]
+  R2 -->|No| O4[Still safer and more reviewable]
+
+  O3 --> P[Chosen: incremental via shim and tokens]

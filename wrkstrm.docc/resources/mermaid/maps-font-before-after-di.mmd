@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph Before[Before: Fragmented APIs]
+    A[Direct UIFont]
+    B[Legacy helpers]
+    C[ObjC TerraTypography]
+    D[Enum-based wrappers]
+    E[Hard-coded overrides]
+  end
+  subgraph After[After: Canonical Pipeline]
+    F[Font loader + registry]
+    G[Semantic tokens + shims]
+    H[UIKit + SwiftUI adapters]
+  end
+  Before -->|Migration shims| After
+  F --> H
+  G --> H

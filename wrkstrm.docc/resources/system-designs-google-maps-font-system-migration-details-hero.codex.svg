@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">system designs google maps font system migration details hero</title>
+  <desc id="desc">Custom asset for system-designs-google-maps-font-system-migration-details (hero).</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1D4E89"/>
+      <stop offset="100%" stop-color="#4C9F70"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="72.00" fill="url(#bg)"/>
+  <rect x="416.96" y="386.43" width="432.68" height="178.93" rx="84.00" fill="#4C9F70" opacity="0.85"/>
+  <circle cx="638.97" cy="285.84" r="132.48" fill="#EE964B" opacity="0.9"/>
+  <path d="M 391.08 434.44 L 607.08 530.44 L 799.08 398.44 Z" fill="#EE964B" opacity="0.6"/>
+  <text x="96.00" y="528.00" font-family="Garamond, "EB Garamond", "Cormorant Garamond", "Times New Roman", serif" font-size="54.00" fill="#F8F4EE" opacity="0.9">system designs google maps font system migration details</text>
+</svg>

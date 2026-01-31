@@ -1,0 +1,11 @@
+%% file: maps-font-snapshot-triage.svg
+%% title: Snapshot triage loop
+flowchart TB
+  S1[Snapshot diff detected] --> Q1{Expected spec change}
+  Q1 -->|Yes| A1[Update baselines and note reason]
+  Q1 -->|No| Q2{Regression}
+  Q2 -->|Yes| F1[Fix token mapping or layout]
+  Q2 -->|No| I1[Mark as noise and refine tests]
+  A1 --> M[Proceed]
+  F1 --> M
+  I1 --> M

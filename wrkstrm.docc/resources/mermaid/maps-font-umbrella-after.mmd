@@ -1,0 +1,38 @@
+%% file: maps-font-umbrella-after.svg
+%% title: After - Canonical modules + compat facade
+flowchart TB
+  subgraph CANON[Canonical modules explicit layering]
+    T[TypographyTokens + FontProvider]
+    C[ColorTokens]
+    I[IconCatalog]
+    L[LayoutMetrics]
+    A[Appearance/Theming]
+    X[Utilities]
+  end
+
+  subgraph COMPAT[Compatibility facade temporary]
+    U[DesignSystemCompat Umbrella]
+  end
+
+  subgraph FEATURES[Features + components]
+    F[Feature code]
+    CMP[Reusable components]
+  end
+
+  F -->|imports only what it uses| T
+  F --> C
+  F --> I
+  CMP --> T
+  CMP --> L
+
+  F -. legacy import .-> U
+  CMP -. legacy import .-> U
+
+  U --> T
+  U --> C
+  U --> I
+  U --> L
+  U --> A
+  U --> X
+
+  U --> R[Gradual elimination of transitive dependencies]

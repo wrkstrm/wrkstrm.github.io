@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">system designs hero</title>
+  <desc id="desc">Custom asset for system-designs (hero).</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B263B"/>
+      <stop offset="100%" stop-color="#D98E04"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="72.00" fill="url(#bg)"/>
+  <rect x="807.33" y="226.94" width="445.35" height="137.55" rx="84.00" fill="#D98E04" opacity="0.85"/>
+  <circle cx="994.02" cy="310.11" r="110.88" fill="#B8F2E6" opacity="0.9"/>
+  <path d="M 556.33 379.53 L 772.33 475.53 L 964.33 343.53 Z" fill="#B8F2E6" opacity="0.6"/>
+  <text x="96.00" y="528.00" font-family="Garamond, "EB Garamond", "Cormorant Garamond", "Times New Roman", serif" font-size="54.00" fill="#F8F4EE" opacity="0.9">system designs</text>
+</svg>

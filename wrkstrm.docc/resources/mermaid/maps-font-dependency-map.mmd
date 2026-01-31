@@ -1,0 +1,18 @@
+%% file: maps-font-dependency-map.svg
+%% title: Dependency map
+flowchart TB
+  subgraph DS[Design system layer]
+    FP[FontProvider API]
+    TK[Typography tokens]
+    SH[Shim layer legacy to tokens]
+  end
+
+  subgraph APPS[Apps]
+    M[Maps iOS]
+    X[Dependent iOS apps]
+  end
+
+  TK --> FP
+  SH --> TK
+  M --> SH
+  X --> SH
