@@ -346,4 +346,3 @@ UIKit and SwiftUI. A migration playbook that scaled across the product surface.
 - <doc:migration-details>
 - <doc:deep-dive-expectations>
 - <doc:open-questions>
-- <doc:scaling-challenges>
