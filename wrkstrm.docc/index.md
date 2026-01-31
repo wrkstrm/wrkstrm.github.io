@@ -58,8 +58,8 @@ Use this repository to explore deep-dives into real-world engineering challenges
 ### Architecture & Design
 
 - <doc:system-designs>
-- <doc:system-design-dimensions>
+- <doc:system-designs.system-design-dimensions.system-design-dimensions>
 
 ### Case Studies
 
-- <doc:google-maps-font-system>
+- <doc:system-designs.google-maps-font-system.google-maps-typography-design-overview>

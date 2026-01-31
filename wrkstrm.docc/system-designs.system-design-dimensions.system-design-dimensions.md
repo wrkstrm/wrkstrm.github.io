@@ -41,21 +41,21 @@ flowchart LR
 
 ## Topics
 
-- <doc:dimensions-executive-summary>
-- <doc:dimensions-problem-context>
-- <doc:dimensions-goals-and-non-goals>
-- <doc:dimensions-requirements-and-constraints>
-- <doc:dimensions-stakeholders-and-ownership>
-- <doc:dimensions-architecture-overview>
-- <doc:dimensions-data-flows-and-interfaces>
-- <doc:dimensions-risks-and-tradeoffs>
-- <doc:dimensions-security-privacy-compliance>
-- <doc:dimensions-reliability-scalability-performance>
-- <doc:dimensions-observability-and-operations>
-- <doc:dimensions-testing-and-validation>
-- <doc:dimensions-migration-and-rollout>
-- <doc:dimensions-results-and-metrics>
-- <doc:dimensions-lessons-and-next-steps>
-- <doc:dimensions-appendix-and-references>
+- <doc:system-designs.system-design-dimensions.dimensions-executive-summary>
+- <doc:system-designs.system-design-dimensions.dimensions-problem-context>
+- <doc:system-designs.system-design-dimensions.dimensions-goals-and-non-goals>
+- <doc:system-designs.system-design-dimensions.dimensions-requirements-and-constraints>
+- <doc:system-designs.system-design-dimensions.dimensions-stakeholders-and-ownership>
+- <doc:system-designs.system-design-dimensions.dimensions-architecture-overview>
+- <doc:system-designs.system-design-dimensions.dimensions-data-flows-and-interfaces>
+- <doc:system-designs.system-design-dimensions.dimensions-risks-and-tradeoffs>
+- <doc:system-designs.system-design-dimensions.dimensions-security-privacy-compliance>
+- <doc:system-designs.system-design-dimensions.dimensions-reliability-scalability-performance>
+- <doc:system-designs.system-design-dimensions.dimensions-observability-and-operations>
+- <doc:system-designs.system-design-dimensions.dimensions-testing-and-validation>
+- <doc:system-designs.system-design-dimensions.dimensions-migration-and-rollout>
+- <doc:system-designs.system-design-dimensions.dimensions-results-and-metrics>
+- <doc:system-designs.system-design-dimensions.dimensions-lessons-and-next-steps>
+- <doc:system-designs.system-design-dimensions.dimensions-appendix-and-references>
 
 
