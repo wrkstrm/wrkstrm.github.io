@@ -60,5 +60,3 @@ Use this repository to explore deep-dives into real-world engineering challenges
 - <doc:system-design-dimensions>
 
 ### Case Studies
-
-- <doc:google-maps-typography-design-overview>
