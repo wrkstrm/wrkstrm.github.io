@@ -18,7 +18,7 @@ A case study on building a typography system for Google Maps iOS: how we moved
 from fragmented font APIs to a canonical pipeline without breaking layout,
 accessibility, or performance at massive scale.
 
-This case study follows the <doc:system-designs.system-design-dimensions.system-design-dimensions> template.
+This case study follows the <doc:system-designs/system-design-dimensions/system-design-dimensions> template.
 
 ## Reference Example
 
@@ -336,14 +336,14 @@ UIKit and SwiftUI. A migration playbook that scaled across the product surface.
 
 ## Topics
 
-- <doc:system-designs.google-maps-font-system.executive-summary>
-- <doc:system-designs.google-maps-font-system.problem-context>
-- <doc:system-designs.google-maps-font-system.requirements-and-constraints>
-- <doc:system-designs.google-maps-font-system.stakeholders-and-ownership>
-- <doc:system-designs.google-maps-font-system.strategy-and-execution>
-- <doc:system-designs.google-maps-font-system.rollout-and-results>
-- <doc:system-designs.google-maps-font-system.lessons>
-- <doc:system-designs.google-maps-font-system.migration-details>
-- <doc:system-designs.google-maps-font-system.deep-dive-expectations>
-- <doc:system-designs.google-maps-font-system.open-questions>
-- <doc:system-designs.google-maps-font-system.scaling-challenges>
+- <doc:system-designs/google-maps-font-system/executive-summary>
+- <doc:system-designs/google-maps-font-system/problem-context>
+- <doc:system-designs/google-maps-font-system/requirements-and-constraints>
+- <doc:system-designs/google-maps-font-system/stakeholders-and-ownership>
+- <doc:system-designs/google-maps-font-system/strategy-and-execution>
+- <doc:system-designs/google-maps-font-system/rollout-and-results>
+- <doc:system-designs/google-maps-font-system/lessons>
+- <doc:system-designs/google-maps-font-system/migration-details>
+- <doc:system-designs/google-maps-font-system/deep-dive-expectations>
+- <doc:system-designs/google-maps-font-system/open-questions>
+- <doc:system-designs/google-maps-font-system/scaling-challenges>
