@@ -3,6 +3,7 @@
 @Metadata {
   @PageKind(article)
   @PageColor(orange)
+  @TechnologyRoot
   @TitleHeading("Technical Systems")
   @PageImage(purpose: icon, source: "system-designs-icon", alt: "Wrkstrm Icon")
   @PageImage(purpose: card, source: "system-designs-card", alt: "Wrkstrm Card")
