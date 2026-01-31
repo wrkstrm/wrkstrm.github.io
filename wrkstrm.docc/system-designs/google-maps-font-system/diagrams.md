@@ -31,8 +31,8 @@ page as an index and a rendering note, not a gallery.
 
 ## Source of Truth
 
-Mermaid sources live in `docc/websites/laussat-studio.docc/resources/mermaid/`.
-Rendered SVGs live at the bundle root: `docc/websites/laussat-studio.docc/resources/`.
+Mermaid sources live in `wrkstrm.docc/resources/mermaid/`.
+Rendered SVGs live at the bundle root: `wrkstrm.docc/resources/`.
 
 ## Diagram: Context Snapshot
 
