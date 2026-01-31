@@ -10,7 +10,7 @@
       <stop offset="1" stop-color="#75de68"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="360" fill="url(#bg)"/>
+  
   <path d="M80 260C220 140 380 120 520 190C660 260 820 260 1120 110" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" fill="none"/>
   <circle cx="158" cy="49" r="94" fill="#df9ef3" fill-opacity="0.28"/>
   <circle cx="182" cy="81" r="119" fill="#75de68" fill-opacity="0.22"/>

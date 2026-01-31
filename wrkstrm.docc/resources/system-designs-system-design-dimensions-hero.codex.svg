@@ -2,7 +2,7 @@
   <title id="title">wrkstrm hero</title>
   <desc id="desc">Geometric system design representation for wrkstrm</desc>
   <!-- Background -->
-  <rect width="1200" height="600" fill="#FBFBFB" />
+  
   
   <text x="600" y="320" text-anchor="middle" font-family="SFMono-Regular, Menlo, Monaco, Consolas, monospace" 
     font-size="56" fill="#1E1E1E" opacity="0.9">wrkstrm</text>

@@ -6,6 +6,6 @@
       <stop offset="1" stop-color="#f068a1"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="630" rx="32" fill="url(#bg)"/>
+  
   <rect x="90" y="90" width="1020" height="450" rx="24" stroke="#a23245" stroke-width="3" fill="none"/>
 </svg>
