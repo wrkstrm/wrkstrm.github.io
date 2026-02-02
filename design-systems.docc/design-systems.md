@@ -17,6 +17,7 @@ A set of public design guides for DocC authoring, preview workflows, and documen
 ### DocC
 
 - <doc:docc-design-system>
+- <doc:filesystem-design>
 - <doc:docc-design-system-docc-packages>
 - <doc:docc-design-system-docc-packages-usage-map>
 - <doc:docc-design-system-preview>

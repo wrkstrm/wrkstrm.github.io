@@ -69,10 +69,14 @@ Minimum layout pages:
 
 ### Organization
 
-- <doc:docc-design-system-file-organization>
-- <doc:docc-design-system-filesystem-alignment>
 - <doc:docc-design-system-docc-packages>
 - <doc:docc-design-system-docc-packages-usage-map>
+
+### Filesystem Design
+
+- <doc:filesystem-design>
+- <doc:docc-design-system-file-organization>
+- <doc:docc-design-system-filesystem-alignment>
 
 ### Publishing
 
