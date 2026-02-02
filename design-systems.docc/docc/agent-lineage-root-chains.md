@@ -40,7 +40,7 @@ This preserves domain-driven boundaries while still allowing a submodule to inhe
 
 When multiple agent documents exist in a context directory, selection must be stable:
 
-- Candidate `*.agent.json` files must be sorted and selected deterministically.
+- Candidate `*.agent.triad.json` files must be sorted and selected deterministically.
 - No reliance on filesystem directory listing order.
 
 ## Merge semantics (current)
@@ -64,7 +64,7 @@ Some agents should be able to intentionally select a specific chain of roots (wh
 
 ### Proposed schema addition (AgentDoc)
 
-Add a new field to `*.agent.json`:
+Add a new field to `*.agent.triad.json`:
 
 ```json
 {

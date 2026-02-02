@@ -23,7 +23,7 @@ mono:
   `github/orgs/<org>/public/docc/pages/<org>.github.io/` each include
   `.github/workflows/publish.yml`
   - example: `github/users/rismay/public/docc/pages/rismay.github.io/.github/workflows/publish.yml`
-  - example: `github/orgs/laussat-studio/public/docc/pages/laussat-studio.github.io/.github/workflows/publish.yml`
+  - example: `code/mono/orgs/laussat-studio/public/docc/pages/laussat-studio.github.io/.github/workflows/publish.yml`
 - mono: `code/mono/.github/workflows/docs.yml`
 
 Only public bundles are published by workflows.
