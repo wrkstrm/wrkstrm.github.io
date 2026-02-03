@@ -15,7 +15,26 @@ Git output is a high-risk UI surface. Treat every command as operator-facing.
 - Include the smallest useful command set (`git status -sb`, targeted `git diff --stat`).
 - Keep approvals explicit: “approve git”, “approve destructive”, or numbered choices.
 
-## Submodules
+## Git
+
+### Commit Messages
+
+- Write narrative messages that make review routing obvious.
+- Include the key path(s) and intent.
+- Add `#tags` for subjects and project initiatives (for example, `#universal-min-target-adoption`).
+- Add participating `^agent` names.
+
+Example:
+
+`update docc/private/library/docs/common-shell.md to reflect CommonShell policy #docs #common-shell ^codex ^carrie`
+
+### Main Branch Versioning
+
+- When committing to `main`, increment the revision (patch) version by `0.0.1`.
+- Update the repo's version source of truth.
+- Push the matching tag.
+
+### Submodules
 
 - Call out submodule paths explicitly and keep commits separate per repo.
 - If a submodule commit is needed, say so before running `git commit` and `git push`.
