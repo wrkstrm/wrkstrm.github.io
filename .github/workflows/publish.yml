@@ -43,12 +43,6 @@ jobs:
 
           # Root landing should go to the documentation index.
           echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/documentation/index/"></head></html>' > "${output_root}/index.html"
-
-          # Keep the old path working as a redirect.
-          mkdir -p "${output_root}/documentation/wrkstrm"
-          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/documentation/index/"></head></html>' > "${output_root}/documentation/wrkstrm/index.html"
-          cp "docc-overrides.css" "${output_root}/css/docc-overrides.css"
-          find "${output_root}" -name index.html -print0 | xargs -0 perl -0pi -e 'if ($_ !~ /docc-overrides\\.css/) { s#</head>#<link rel="stylesheet" href="/css/docc-overrides.css"></head># }'
           touch "${output_root}/.nojekyll"
 
       - name: Upload Pages artifact
