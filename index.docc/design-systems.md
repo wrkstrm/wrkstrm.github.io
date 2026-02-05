@@ -1,7 +1,7 @@
 # Design Systems
 
 @Metadata {
-  @TechnologyRoot
+  @PageKind(article)
   @PageColor(blue)
   @TitleHeading("DocC authoring + preview tooling")
   @PageImage(purpose: icon, source: "clia-design-systems-icon", alt: "Design systems icon")
