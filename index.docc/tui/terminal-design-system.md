@@ -39,6 +39,14 @@ This system emphasizes clear success, progress, and error patterns so operators 
 - If forced to use Python, log the rationale and set a Swift replacement plan; no new Python deps/virtualenv scaffolding.
 - Migration playbook: identify legacy scripts, replace with Swift CLI, deprecate old entrypoints.
 
+## DocC Publishing
+
+- Prefer **native DocC hosting paths** over redirect hacks.
+- When publishing multiple `.docc` catalogs to GitHub Pages, build each catalog under:
+  - `/documentation/<bundle>/`
+  - by setting `--hosting-base-path "/documentation/<bundle>"` per catalog.
+- Avoid generating ad-hoc redirect `index.html` files to "paper over" missing routes; fix the build pipeline instead.
+
 ## Topics
 
 ### Guidance
