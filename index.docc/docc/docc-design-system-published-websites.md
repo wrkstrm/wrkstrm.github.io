@@ -28,6 +28,14 @@ mono:
 
 Only public bundles are published by workflows.
 
+## Public-facing writing rules
+
+When authoring pages that ship to GitHub Pages (user-facing):
+
+- **Do not include commit hashes** (or raw `.../commit/<sha>` links). If you need provenance, link to a PR, issue, or a stable documentation page.
+- **Do not use timestamps with seconds** (or fractional seconds). Prefer a date (YYYY-MM-DD) or a human month/week label.
+
+
 ### Tooling notes
 
 - macOS: use `xcrun docc` (DocC ships inside Xcode, not on PATH by default).
