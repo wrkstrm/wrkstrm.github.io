@@ -61,6 +61,6 @@ Use this repository to explore deep-dives into real-world engineering challenges
 
 ### Timeline
 
-- <doc:clia-tau-2025-timeline>
+- <doc:timeline>
 
 ### Case Studies
