@@ -18,7 +18,7 @@ Preview and quality gates for DocC bundles.
 - If you customize CSS, inject it into `index.html` and `index-template.html`.
 - Use `index.md` as the root article and avoid `Documentation.md` so the URL does not collapse to
   `/documentation/documentation`.
-- Ensure preview indexes resolve, including `/index/documentation/index.json`.
+- Ensure preview indexes resolve, including `/design-system/documentation/index.json`.
 - Use `docc-wrkstrm palette-editor` to adjust DocC theme tokens and export CSS/JSON.
 - Keep palette editor outputs in `resources/` or `.clia/tmp/` and wire them via theme settings.
 - If preview fails with file limit warnings, raise the shell limit with `ulimit -n` before running.
