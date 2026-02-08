@@ -35,3 +35,4 @@ Checklists for creating and reviewing SVGs.
 - [ ] Is the SVG accessible to people with disabilities?
 - [ ] Is the SVG performant?
 - [ ] Is the SVG code well-structured and easy to maintain?
+

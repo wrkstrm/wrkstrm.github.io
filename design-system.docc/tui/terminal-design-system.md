@@ -17,6 +17,13 @@ Use it like you stole it - every log line is a UI moment.
 
 This system emphasizes clear success, progress, and error patterns so operators can act fast.
 
+## Discord
+
+Have a question, want to propose a pattern, or share an example screenshot?
+Join the Discord and post in the design-system / TUI threads:
+
+- <https://discord.gg/yAufpQGP>
+
 @Options {
   @TopicsVisualStyle(detailedGrid)
   @AutomaticSeeAlso(disabled)

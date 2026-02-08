@@ -71,6 +71,7 @@ Minimum layout pages:
 
 - <doc:docc-design-system-docc-packages>
 - <doc:docc-design-system-docc-packages-usage-map>
+- <doc:docc-design-system-discord-conventions>
 
 ### Filesystem Design
 
@@ -81,6 +82,7 @@ Minimum layout pages:
 ### Publishing
 
 - <doc:docc-design-system-published-websites>
+- <doc:docc-design-system-github-actions>
 
 ### Navigation
 

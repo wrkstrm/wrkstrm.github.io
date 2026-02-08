@@ -28,6 +28,12 @@ mono:
 
 Only public bundles are published by workflows.
 
+### GitHub Actions
+
+For DocC-specific GitHub Actions conventions and common failure modes, see:
+
+- <doc:docc-design-system-github-actions>
+
 ## Public-facing writing rules
 
 When authoring pages that ship to GitHub Pages (user-facing):

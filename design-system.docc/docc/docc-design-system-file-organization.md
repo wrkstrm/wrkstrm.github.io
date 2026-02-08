@@ -57,6 +57,28 @@ Every `.docc` bundle must follow this organization pattern:
 
 Public DocC bundles are hosted on GitHub Pages; private bundles are rendered by local apps.
 
+## Submodule Layout (public vs private)
+
+Mono contains nested Git submodules. When a component transitions from public → private, follow a
+predictable filesystem split:
+
+- `public/` = open-source and public-facing surfaces
+- `private/` = closed-source implementations and internal tooling
+
+Example (CLIA):
+
+- `orgs/clia-org/public/spm/clia-agent-cli` (OLD)
+- `orgs/clia-org/private/spm/clia-agent-cli` (NEW)
+
+When moving a submodule path, there are typically **three required updates**:
+
+1. Move the directory (`git mv old/path new/path`).
+2. Update `.gitmodules` to match the new `path = …` and the correct remote URL.
+   - Private repos should prefer SSH remotes (e.g. `git@github.com:org/repo.git`).
+   - Public repos can remain HTTPS.
+3. Sync submodule metadata (git config + `.git/modules/...`) via `git submodule sync` and `git submodule update`.
+   - If the embedded gitdir doesn’t relocate cleanly, run `git submodule absorbgitdirs`.
+
 - **Public (GitHub Pages):**
   - Users: `github/users/<user>/public/docc/pages/<user>.github.io/<bundle>.docc/index.md`
   - Orgs: `github/orgs/<org>/public/docc/pages/<org>.github.io/<bundle>.docc/index.md`
