@@ -17,6 +17,42 @@ For a bundle named `index`, the following should return **200** and valid JSON:
 
 - `GET /data/documentation/index.json`
 
+### Common failure mode: DocC “half deploy” (nav missing, deep links 404)
+
+A particularly nasty failure mode is when the site *appears* to work because:
+
+- `/documentation/index/` renders the landing page, and
+- `GET /data/documentation/index.json` returns **200**
+
+…but the deployment is still broken because **most of the DocC archive is missing**.
+
+#### Symptoms
+
+- The Documentation Navigator is empty (or nearly empty).
+- Deep links 404 (GitHub Pages “File not found”), e.g. `/documentation/system-designs/`.
+- Key JSON payloads 404:
+  - `GET /data/documentation/documentation.json` → 404
+  - `GET /data/documentation/<bundle>.json` → 404 (bundle/topic pages)
+- `GET /sitemap.xml` is missing (404) (optional, but a useful corroborating signal).
+
+#### What to probe (recommended)
+
+In addition to `index.json`, probe at least one *non-index* payload:
+
+- `GET /data/documentation/documentation.json` (the top-level catalog, when present)
+- one known topic page JSON (a stable bundle path you expect to exist)
+
+If `index.json` is 200 but these probes fail, classify as **🟡 degraded** (or 🔴 if most payloads are
+missing).
+
+#### Likely root causes
+
+- The publish/deploy step only copied part of the DocC output (`documentation/index/` and
+  `data/documentation/index.json`) but not the full `data/` + `documentation/` trees.
+- Base-path / mount-root mismatch: site shell expects assets at `/data/documentation/*` but the
+  archive was deployed under a different prefix.
+- A workflow filtered the artifact set (e.g., rsync include/exclude) and dropped `data/**`.
+
 Example:
 
 ```bash
