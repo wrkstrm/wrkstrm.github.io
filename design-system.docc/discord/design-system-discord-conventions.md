@@ -1,4 +1,4 @@
-# Discord Conventions (Org + Agent Channels) [MOVED]
+# Discord Conventions (Org + Agent Channels)
 
 @Metadata {
   @PageImage(purpose: icon, source: "docc-docc-design-system-icon", alt: "DocC design-system icon")
@@ -6,11 +6,7 @@
   @PageColor(purple)
 }
 
-This page has moved.
-
-New canonical location:
-
-- `design-system.docc/discord/design-system-discord-conventions.md`
+This page documents the current Discord information architecture conventions used to keep large, multi-org agent rosters scannable.
 
 ## Design decision: Operators are Agents (no separate category)
 
@@ -80,6 +76,10 @@ Promotion path (turn threads into durable knowledge):
 - Dated outcome/postmortem → promote to `memory.docc/journal/`.
 - Sketch/hypothesis → keep in `memory.docc/ideas/`.
 - Committed work item → `.clia/BACKLOG.md`.
+
+## Message formatting
+
+- See <doc:design-system-discord-message-formatting>.
 
 ## Notes
 

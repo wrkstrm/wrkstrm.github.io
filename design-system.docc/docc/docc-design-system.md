@@ -67,11 +67,16 @@ Minimum layout pages:
 - <doc:docc-design-system-anti-patterns>
 - <doc:docc-design-system-examples>
 
+### Site Reliability
+
+- <doc:docc-site-reliability>
+
 ### Organization
 
 - <doc:docc-design-system-docc-packages>
 - <doc:docc-design-system-docc-packages-usage-map>
 - <doc:docc-design-system-discord-conventions>
+- <doc:docc-design-system-versioning>
 
 ### Filesystem Design
 

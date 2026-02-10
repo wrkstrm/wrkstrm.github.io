@@ -57,6 +57,30 @@ Every `.docc` bundle must follow this organization pattern:
 
 Public DocC bundles are hosted on GitHub Pages; private bundles are rendered by local apps.
 
+## Crossing the public barrier (bridging rules)
+
+Treat the public/private split as a **release boundary** with an explicit contract — not “just a folder”.
+
+### Content classes
+
+1. **Public (OK to ship):** stable concepts and interfaces; outside-readable docs; no internal-only context.
+2. **Private (never ship):** operator/local-machine notes, internal benchmarks/incidents, unreleased plans, private paths/identifiers.
+3. **Bridgeable (starts private; may graduate):** design notes that might become public after review.
+
+### Graduation checklist (private → public)
+
+A document may cross the barrier only after:
+
+- **Audience rewrite:** remove internal context and assume an external reader.
+- **Stability:** behavior is intended to be supported (or explicitly marked experimental).
+- **Sanitization:** no private paths (e.g. `/Users/...`), no `.clia/operators/**`, no private corpora references.
+- **Surface alignment:** aligns with the public schema/CLI surface that will enforce it.
+- **Explicit approval:** a named owner/reviewer signs off.
+
+### Rule of thumb
+
+Exploration happens in **private** docs first. Public docs should generally be **graduated copies** (rewritten), not moved originals.
+
 ## Submodule Layout (public vs private)
 
 Mono contains nested Git submodules. When a component transitions from public → private, follow a

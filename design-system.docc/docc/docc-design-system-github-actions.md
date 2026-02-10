@@ -62,6 +62,51 @@ This keeps redirects deterministic and independent of DocC sanitization.
 - Confirm `--hosting-base-path` matches the path the artifact will be served under.
 - If you need redirects, generate static `index.html` files as a post-build step.
 
+## Site reliability
+
+This page is about **publishing**.
+
+For monitoring conventions (JSON probes, incident threads, badges, posting rules), see:
+
+- <doc:docc-site-reliability>
+
+
+### Thread naming convention
+
+Use exactly one of three badges (based on the *last run status*):
+
+- 🟢 (healthy)
+- 🟡 (degraded)
+- 🔴 (down)
+
+Thread name template (double emoji):
+
+- `{thread-type-emoji}{status-emoji} incidents: site-reliability-{agent-emoji}`
+
+Where:
+- `thread-type-emoji` = `🛡️` (SRE/guardrails)
+- `status-emoji` = 🟢 | 🟡 | 🔴 (last run status)
+
+Examples:
+- `🛡️🟢 incidents: site-reliability-🧩`
+- `🛡️🟡 incidents: site-reliability-🧩`
+- `🛡️🔴 incidents: site-reliability-🧩`
+
+### Posting rules (state-change only)
+
+Monitors should track the last known status and:
+
+- 🟢 → 🟡: post once with a short degradation summary
+- 🟡 → 🟢: post once with a recovery summary
+- any → 🔴: post once with a failure summary (include failing probes)
+- same → same: **no post** (avoid hourly spam)
+
+### Status definitions (recommended)
+
+- 🟢: all JSON probes succeed (200 + JSON parses + minimal assertions)
+- 🟡: some probes fail but primary index probe succeeds
+- 🔴: primary index probe fails (or multiple probes fail)
+
 ## Failure modes we’ve hit
 
 - **404 on a “subpath site”**: the file tree doesn’t actually include that folder on Pages.
