@@ -17,6 +17,10 @@ Use this page as the “gotchas” checklist before shipping new SVG diagrams.
 ## Interaction Constraints
 
 - No JavaScript. DocC does not execute scripts inside SVGs.
+- Text selection: **SVG text is not reliably selectable when embedded in DocC**.
+  - Opening the raw `.svg` URL may allow selecting `<text>`.
+  - Inside DocC pages, SVGs are typically embedded as images (`<img>`), so the browser treats the SVG like an image surface and text selection/copy is not exposed.
+  - If users need copyable text (commands, URLs, API names), put it in Markdown/code blocks near the SVG instead of relying on `<text>` inside the SVG.
 - Hover is best-effort:
   - many renderers treat SVGs as images and do not deliver reliable `:hover` state
   - touch devices may never trigger hover
