@@ -1,11 +1,87 @@
-# design-system-discord-conventions
+# Discord Conventions (Org + Agent Channels)
 
 @Metadata {
-  @PageColor(gray)
+  @PageImage(purpose: icon, source: "docc-docc-design-system-icon", alt: "DocC design-system icon")
+  @PageKind(article)
+  @PageColor(purple)
 }
 
-> [!NOTE]
-> This article moved to **CLIA Design System (provisioned)**.
->
-> New location (mono):
-> orgs/clia-org/provisioned/clia-design-system-0/clia-design-system.docc/articles/design-system-discord-conventions.md
+This page documents the current Discord information architecture conventions used to keep large, multi-org agent rosters scannable.
+
+## Design decision: Operators are Agents (no separate category)
+
+We experimented with splitting “operators” and “agents” into separate Discord categories.
+
+We reverted that.
+
+**Rationale**
+
+- An “operator” is an **operating posture** (guardrails + safety defaults), not a different kind of entity.
+- Discord navigation should remain stable as the roster grows; splitting by posture creates churn.
+- Posture is better represented in:
+  - channel naming (type prefix), and
+  - triad Agency (constraints / S-Type), not sidebar taxonomy.
+
+## Category naming (org-first, type prefix)
+
+Org categories are prefixed by a shared org-type emoji, and suffixed with a per-org callsign:
+
+- Format: `🌐-<org>-<callsign>`
+
+Example org callsigns:
+
+- `🌐-wrkstrm-⚙️`
+- `🌐-todo3-📦`
+- `🌐-text-allora-🗣️`
+- `🌐-wrkstrm-finance-💹`
+- `🌐-laussat-studio-🎨`
+
+## Channel naming (type first, emoji last)
+
+Agent/operator chat channels are named with type first and the persona emoji last:
+
+- Format: `<type>-<slug>-<emoji>`
+
+Where:
+
+- `<type>` is currently:
+  - `💠` for agent persona chats
+  - `🧬` for operator-posture chats
+- `<slug>` is the stable identifier (lowercase, kebab-case; keep it short)
+- `<emoji>` is the persona emoji (single emoji)
+
+Examples:
+
+- `💠-crush-🐍`
+- `💠-tau-🪐`
+- `🧬-rismay-🧬`
+- `🧬-uptobat-👻`
+
+## Operator thread protocol (🧬)
+
+Operator-posture channels (🧬) can accumulate many parallel lines of thought. Use Discord threads to keep work
+scannable without fragmenting into new channels.
+
+Minimal protocol:
+
+- **One thread = one intent.** If the intent changes, spin a new thread.
+- **Thread opener** must include a short framing header (who/with/org/lane/scope) + a one-line goal.
+- Capture outcomes explicitly:
+  - `DECISION:` for durable decisions.
+  - `TODO:` for actionable follow-ups.
+
+Promotion path (turn threads into durable knowledge):
+
+- Stable rule/pattern → promote to `memory.docc/expertise/`.
+- Dated outcome/postmortem → promote to `memory.docc/journal/`.
+- Sketch/hypothesis → keep in `memory.docc/ideas/`.
+- Committed work item → `.clia/BACKLOG.md`.
+
+## Message formatting
+
+- See <doc:design-system-discord-message-formatting>.
+
+## Notes
+
+- Channel topics may contain automation hints (e.g. `$sync ^channel-name ...`). Keep these in sync if the channel is renamed.
+- Avoid embedding “lane” semantics into Discord categories; use naming + triads.
