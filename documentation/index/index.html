@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Technology</title>
-    <meta name="description" content="Main technology root for Wrkstrm." />
+    <title>Wrkstrm</title>
+    <meta name="description" content="Wrkstrm: systems-first engineering and product work." />
     <style>
       :root { color-scheme: light; }
       body {
-        font-family: "Palatino Linotype", Palatino, "Times New Roman", serif;
+        font-family: ui-serif, "Palatino Linotype", Palatino, "Times New Roman", serif;
         margin: 0;
         background: #f8f6f1;
         color: #141310;
       }
       main {
-        max-width: 780px;
+        max-width: 820px;
         margin: 12vh auto;
         padding: 0 24px 64px;
       }
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
         letter-spacing: -0.02em;
         margin: 0 0 12px;
       }
@@ -27,6 +27,9 @@
         font-size: 1.05rem;
         line-height: 1.6;
         margin: 0 0 16px;
+      }
+      .hint {
+        opacity: 0.82;
       }
       a {
         color: #1f4acc;
@@ -36,13 +39,36 @@
       a:hover {
         border-bottom-color: #1f4acc;
       }
+      .card {
+        margin-top: 28px;
+        padding: 18px 18px;
+        border: 1px solid rgba(20, 19, 16, 0.12);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.55);
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.95em;
+      }
     </style>
   </head>
   <body>
     <main>
-      <h1>Technology</h1>
-      <p>This is the main technology root for Wrkstrm.</p>
-      <p>Full documentation lives at <a href="/documentation/wrkstrm/">/documentation/wrkstrm/</a>.</p>
+      <h1>Wrkstrm</h1>
+      <p class="hint">
+        This is a public landing page. Detailed technical documentation (including design systems) is maintained in
+        provisioned/private spaces.
+      </p>
+
+      <div class="card">
+        <p>
+          If you expected internal docs under <code>/documentation/…</code>, you’re in the right neighborhood — this
+          endpoint is intentionally lightweight.
+        </p>
+        <p>
+          Contact: <a href="mailto:hello@wrkstrm.com">hello@wrkstrm.com</a>
+        </p>
+      </div>
     </main>
   </body>
 </html>

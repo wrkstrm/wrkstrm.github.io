@@ -1,5 +1,5 @@
-# Technology
+# Wrkstrm
 
-This is the main technology root for Wrkstrm.
+This is the public landing page for Wrkstrm.
 
-Full documentation lives at /documentation/wrkstrm/.
+Detailed technical documentation (including design systems) is maintained in provisioned/private spaces.
