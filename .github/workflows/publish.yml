@@ -25,7 +25,12 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Build site (public landing only)
+      - name: Set up Swift
+        uses: swift-actions/setup-swift@v2
+        with:
+          swift-version: '6.2'
+
+      - name: Build DocC (public landing only)
         run: |
           set -euo pipefail
           output_root="${GITHUB_WORKSPACE}/_site"
@@ -36,13 +41,14 @@ jobs:
           # - This site is a *public hint* about Wrkstrm.
           # - Do NOT publish internal design-system/provisioned/private docs here.
 
-          # Serve the public landing at /documentation/index/
-          mkdir -p "${output_root}/documentation/index"
-          cp "documentation/index/index.html" "${output_root}/documentation/index/index.html"
+          # Build ONLY the public landing DocC bundle.
+          docc convert "index.docc" \
+            --output-path "${output_root}" \
+            --transform-for-static-hosting \
+            --hosting-base-path /
 
           # Root landing should go to the documentation index.
           echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/documentation/index/"></head></html>' > "${output_root}/index.html"
-
           touch "${output_root}/.nojekyll"
 
       - name: Upload Pages artifact
