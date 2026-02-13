@@ -28,6 +28,10 @@
 ## Review Checklist
 
 - Navigation is predictable and links resolve.
+- Git hygiene: **no `git reset --hard`** on shared repos/lanes (you can silently discard work). Prefer:
+  - `git revert <commit>` for bad commits (especially if pushed)
+  - or a follow-up “fix” commit (e.g. move files back / restore fields)
+  - use path-scoped restore (`git restore <path>`) instead of history rewrites
 - Visuals are readable and consistent with DocC style.
 - Hero and diagram SVGs render cleanly (gradients, strokes, and text remain legible).
 - README pointers align with DocC entry points.
