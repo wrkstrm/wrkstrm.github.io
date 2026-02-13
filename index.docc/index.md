@@ -14,6 +14,8 @@
 
 A public landing page.
 
+Wrkstrm is a blend of JPM, UNH, and GOOG — finance-grade rigor, healthcare-grade reliability, and Google-scale systems thinking.
+
 Detailed technical documentation (including design systems) is maintained in provisioned/private spaces.
 
 ## Contact
