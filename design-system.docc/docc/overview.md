@@ -13,5 +13,6 @@ Include
 - Audience and context (who should read this)
 - Non-goals or exclusions
 - High-level capabilities and boundaries
+- Directory taxonomy (public vs provisioned vs private): <doc:directory-design-system-public-provisioned-private>
 
 Avoid long histories, deep architecture, or step-by-step instructions here.

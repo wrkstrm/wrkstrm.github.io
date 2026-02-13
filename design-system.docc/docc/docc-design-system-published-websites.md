@@ -42,6 +42,20 @@ When authoring pages that ship to GitHub Pages (user-facing):
 - **Do not use timestamps with seconds** (or fractional seconds). Prefer a date (YYYY-MM-DD) or a human month/week label.
 
 
+### Root redirect page (custom previews)
+
+DocC’s static output lands under `/documentation/<tech-root>/…`. If you want **custom OpenGraph/Twitter previews** (Discord unfurl) you need a repo-root landing page (usually `/index.html`) that:
+
+- sets OG meta tags (title/description/image), and
+- redirects to the DocC landing route.
+
+This is why `swift-docc-deploy` generates a root redirect page when deploying provisioned shares.
+
+Important:
+- The redirect target must match the **actual emitted tech-root**.
+- Do **not** assume the tech-root is `index` just because the catalog folder is `index.docc`.
+- The robust way is: after `docc convert`, read `_site/index/index.json` (or `metadata.json`) and redirect to the discovered `/documentation/<tech-root>/`.
+
 ### Tooling notes
 
 - macOS: use `xcrun docc` (DocC ships inside Xcode, not on PATH by default).

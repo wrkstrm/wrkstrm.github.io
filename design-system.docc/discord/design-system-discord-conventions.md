@@ -70,6 +70,34 @@ Minimal protocol:
   - `DECISION:` for durable decisions.
   - `TODO:` for actionable follow-ups.
 
+### Thread naming (operator spec)
+
+Use a deterministic name that encodes priority, status, tags, and a short slug:
+
+- Format: `🧵-pM.m-<statusEmoji>-<tagEmojis>-<short-slug>`
+
+Examples:
+
+- `🧵-p0.1-⛔️-🔐🔗-fix-ssh-auth`
+- `🧵-p0.2-🔵-🧯🌐-wrkstrm-app-missing-content`
+
+Canonical metadata is stored in repo thread artifacts under `threads/<slug>/*.thread.clia.json` (including
+`priority`, `statusEmoji`, and `tagEmojis`).
+
+### Thread lifecycle (Discord-native)
+
+We use Discord’s own lifecycle terms as semantics:
+
+- **Active**: objective is still in progress.
+- **Archived**: objective is finished (main mission complete).
+- **Locked**: objective is finished *and* all related subthreads are finished.
+
+Operational notes:
+
+- Archiving/locking is a UI hygiene move; the repo thread artifact remains the system of record.
+- If a thread is archived/locked but new work is discovered, create a continuation thread and link it from the
+  thread events stream.
+
 Promotion path (turn threads into durable knowledge):
 
 - Stable rule/pattern → promote to `memory.docc/expertise/`.
