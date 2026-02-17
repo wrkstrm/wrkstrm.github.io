@@ -105,6 +105,10 @@ Promotion path (turn threads into durable knowledge):
 - Sketch/hypothesis → keep in `memory.docc/ideas/`.
 - Committed work item → `.clia/BACKLOG.md`.
 
+## Thread spin procedure
+
+- See <doc:design-system-discord-thread-spin-procedure>.
+
 ## Message formatting
 
 - See <doc:design-system-discord-message-formatting>.
