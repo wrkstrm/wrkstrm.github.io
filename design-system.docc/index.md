@@ -55,6 +55,10 @@ Use this repository to explore deep-dives into real-world engineering challenges
 
 ## Topics
 
+### Investigations
+
+- <doc:wrkstrm-investigations>
+
 ### Architecture & Design
 
 - <doc:design-systems>
