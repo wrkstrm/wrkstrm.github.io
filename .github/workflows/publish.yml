@@ -46,7 +46,8 @@ jobs:
             docc convert "${catalog}" \
               --output-path "${output_root}" \
               --transform-for-static-hosting \
-              --hosting-base-path /
+              --hosting-base-path / \
+              --fallback-display-name "Wrkstrm"
           done
 
           # Documentation fallback routes (only when DocC didn't generate them).
