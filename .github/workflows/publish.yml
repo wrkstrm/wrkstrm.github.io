@@ -30,25 +30,28 @@ jobs:
         with:
           swift-version: '6.2'
 
-      - name: Build DocC (public landing only)
+      - name: Build DocC
         run: |
           set -euo pipefail
           output_root="${GITHUB_WORKSPACE}/_site"
           rm -rf "${output_root}"
           mkdir -p "${output_root}"
 
-          # Public site policy:
-          # - This site is a *public hint* about Wrkstrm.
-          # - Do NOT publish internal design-system/provisioned/private docs here.
+          # Build DocC bundles.
+          # Note: multiple converts can write into the same static hosting root.
+          for catalog in \
+            "index.docc" \
+            "wrkstrm-investigations.docc"
+          do
+            docc convert "${catalog}" \
+              --output-path "${output_root}" \
+              --transform-for-static-hosting \
+              --hosting-base-path /
+          done
 
-          # Build ONLY the public landing DocC bundle.
-          docc convert "index.docc" \
-            --output-path "${output_root}" \
-            --transform-for-static-hosting \
-            --hosting-base-path /
-
-          # Root landing should go to the documentation index.
+          # Root landing + 404 should go to the documentation index.
           echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/documentation/index/"></head></html>' > "${output_root}/index.html"
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/documentation/index/"></head></html>' > "${output_root}/404.html"
           touch "${output_root}/.nojekyll"
 
       - name: Upload Pages artifact
