@@ -17,12 +17,22 @@
   @AutomaticSeeAlso(disabled)
 }
 
-Wrkstrm is the brand surface for an engineering ecosystem built around **DocC**, **operational rigor**,
+Wrkstrm is an engineering ecosystem built around **documentation-first delivery**, **operational rigor**,
 and **small composable tools**.
+
+## Mission
+
+Wrkstrm exists to make complex work repeatable: clear interfaces, explicit protocols, and systems that
+can be verified.
+
+## Founding
+
+Wrkstrm grew out of real operational needs: build tools that survive production pressure, and write
+the documentation that makes those tools understandable and auditable.
 
 ## Topics
 
-### Start here
+### Company
 
 - <doc:history>
 - <doc:ecosystem>
