@@ -38,24 +38,15 @@ jobs:
           mkdir -p "${output_root}"
 
           # Build DocC bundles.
-          # Note: multiple converts can write into the same static hosting root.
-          for catalog in \
-            "index.docc" \
-            "wrkstrm-investigations.docc"
-          do
-            docc convert "${catalog}" \
-              --output-path "${output_root}" \
-              --transform-for-static-hosting \
-              --hosting-base-path / \
-              --experimental-enable-custom-templates \
-              --fallback-display-name "Wrkstrm"
-          done
-
-          # Documentation fallback routes (only when DocC didn't generate them).
-          if [ -f "documentation/wrkstrm-investigations/index.html" ] && [ ! -f "${output_root}/documentation/wrkstrm-investigations/index.html" ]; then
-            mkdir -p "${output_root}/documentation/wrkstrm-investigations"
-            cp "documentation/wrkstrm-investigations/index.html" "${output_root}/documentation/wrkstrm-investigations/index.html"
-          fi
+          # IMPORTANT: this repo publishes exactly one catalog (index.docc).
+          # Other catalogs (e.g. investigations) must publish from their own Pages repo,
+          # otherwise root-level DocC artifacts like /index/index.json can be overwritten.
+          docc convert "index.docc" \
+            --output-path "${output_root}" \
+            --transform-for-static-hosting \
+            --hosting-base-path / \
+            --experimental-enable-custom-templates \
+            --fallback-display-name "Wrkstrm"
 
           # Root landing + 404 should go to the documentation index.
           echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/documentation/index/"></head></html>' > "${output_root}/index.html"
