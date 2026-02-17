@@ -157,7 +157,7 @@ If quick fixes fail:
   - scope (which org/workspace)
   - last known good / suspected change
   - rollback suggestion
-- Notify the operator (via `.clia/profiles/operators/...`) with a link to the thread
+- Notify the operator (via `.wrkstrm/profiles/operators/...`) with a link to the thread
 
 ### Cleanup
 
