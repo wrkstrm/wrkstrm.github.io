@@ -48,9 +48,17 @@ jobs:
             --experimental-enable-custom-templates \
             --fallback-display-name "Wrkstrm"
 
-          # Root landing + 404 should go to the documentation index.
-          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/documentation/index/"></head></html>' > "${output_root}/index.html"
-          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/documentation/index/"></head></html>' > "${output_root}/404.html"
+          # Copy the brand front door pages (static HTML) into the Pages artifact.
+          # Keep DocC under /documentation/*, but make / a real site (App Review friendly).
+          if [ -d "site-root" ]; then
+            cp -R "site-root/"* "${output_root}/"
+          fi
+
+          # 404: route to brand root (not Docs).
+          if [ ! -f "${output_root}/404.html" ]; then
+            cp "${output_root}/index.html" "${output_root}/404.html"
+          fi
+
           touch "${output_root}/.nojekyll"
 
       - name: Upload Pages artifact
