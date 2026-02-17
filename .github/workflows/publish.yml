@@ -48,16 +48,36 @@ jobs:
             --experimental-enable-custom-templates \
             --fallback-display-name "Wrkstrm"
 
-          # Copy the brand front door pages (static HTML) into the Pages artifact.
-          # Keep DocC under /documentation/*, but make / a real site (App Review friendly).
-          if [ -d "site-root" ]; then
-            cp -R "site-root/"* "${output_root}/"
-          fi
+          # Root landing page: add OG/Twitter meta for link previews, then redirect into DocC.
+          cat > "${output_root}/index.html" <<'EOF'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <title>Wrkstrm</title>
+            <meta name="description" content="Wrkstrm — documentation."/>
 
-          # 404: route to brand root (not Docs).
-          if [ ! -f "${output_root}/404.html" ]; then
-            cp "${output_root}/index.html" "${output_root}/404.html"
-          fi
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="Wrkstrm"/>
+            <meta property="og:description" content="Wrkstrm — documentation."/>
+            <meta property="og:image" content="https://github.com/wrkstrm.png?size=512"/>
+
+            <meta name="twitter:card" content="summary_large_image"/>
+            <meta name="twitter:title" content="Wrkstrm"/>
+            <meta name="twitter:description" content="Wrkstrm — documentation."/>
+            <meta name="twitter:image" content="https://github.com/wrkstrm.png?size=512"/>
+
+            <meta http-equiv="refresh" content="0; url=/documentation/index/"/>
+          </head>
+          <body>
+            <p>Redirecting to documentation…</p>
+          </body>
+          </html>
+          EOF
+
+          # 404 should also route into the docs index (prevents dead-end previews).
+          cp "${output_root}/index.html" "${output_root}/404.html"
 
           touch "${output_root}/.nojekyll"
 
