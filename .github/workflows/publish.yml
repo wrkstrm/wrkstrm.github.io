@@ -57,6 +57,7 @@ jobs:
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <title>Wrkstrm</title>
             <meta name="description" content="Wrkstrm — documentation."/>
+            <link rel="canonical" href="https://wrkstrm.com/"/>
 
             <meta property="og:type" content="website"/>
             <meta property="og:title" content="Wrkstrm"/>
@@ -69,9 +70,23 @@ jobs:
             <meta name="twitter:image" content="https://github.com/wrkstrm.png?size=512"/>
 
             <meta http-equiv="refresh" content="0; url=/documentation/index/"/>
+            <script>
+              // Avoid an all-white flash on mobile before DocC loads.
+              window.location.replace('/documentation/index/');
+            </script>
+            <style>
+              :root { color-scheme: light dark; }
+              body { margin: 0; min-height: 100vh; display: grid; place-items: center; font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+              .wrap { text-align: center; padding: 28px 18px; }
+              .title { font-size: 20px; letter-spacing: -0.02em; }
+              .sub { margin-top: 8px; opacity: 0.75; font-size: 13px; }
+            </style>
           </head>
           <body>
-            <p>Redirecting to documentation…</p>
+            <div class="wrap">
+              <div class="title">Wrkstrm</div>
+              <div class="sub">Loading documentation…</div>
+            </div>
           </body>
           </html>
           EOF
