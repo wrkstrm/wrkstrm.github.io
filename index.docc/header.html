@@ -1,0 +1,19 @@
+<!--
+  DocC custom template: injected into every page when building with
+  `--experimental-enable-custom-templates`.
+
+  Goal: replace the default “Documentation” navigator header with the site brand.
+-->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const brand = 'Wrkstrm'
+
+    // Mobile/compact navigator header.
+    for (const h of document.querySelectorAll('h2')) {
+      if (h.textContent && h.textContent.trim() === 'Documentation') {
+        h.textContent = brand
+        break
+      }
+    }
+  })
+</script>
