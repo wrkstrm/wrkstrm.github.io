@@ -17,18 +17,50 @@
   @AutomaticSeeAlso(disabled)
 }
 
-Wrkstrm is an engineering ecosystem built around **documentation-first delivery**, **operational rigor**,
-and **small composable tools**.
+Wrkstrm is an engineering ecosystem built around **documentation-first delivery**, **operational rigor**, and **small composable tools**.
+
+It modernizes a decade of CLI practice into a unified system of **agentic assistants** and **type-safe software artifacts**—so teams can ship with clarity, auditability, and momentum.
+
+## What we do
+
+Wrkstrm helps engineering organizations:
+
+- Turn documentation into operational interfaces (not just pages).
+- Standardize workflows as explicit protocols.
+- Build small tools that compose into systems.
+- Keep delivery repeatable under production pressure.
 
 ## Mission
 
-Wrkstrm exists to make complex work repeatable: clear interfaces, explicit protocols, and systems that
-can be verified.
+Make complex work repeatable: clear interfaces, explicit protocols, and systems that can be verified.
 
-## Founding
+## How we’re different
 
-Wrkstrm grew out of real operational needs: build tools that survive production pressure, and write
-the documentation that makes those tools understandable and auditable.
+### Documentation-first delivery
+
+Documentation is treated as product surface area: it defines expectations, interfaces, and the “shape” of operations.
+
+### Operational rigor
+
+We prefer mechanisms that survive real-world constraints: incident pressure, rate limits, dependency drift, and human handoffs.
+
+### Composability
+
+We bias toward small tools with strong seams—so capabilities can be combined without turning into a monolith.
+
+## Core capabilities
+
+- **Agentic operations:** assistants with defined personas and mandates (orchestrator, documentation steward, incident responder).
+- **Type-safe artifacts:** consistent identifiers/namespaces, manifests, and stable interfaces.
+- **Protocol-driven execution:** workflows expressed as explicit steps and conventions.
+- **Design system for docs:** predictable structure, navigation, and visual lanes for large doc sets.
+
+## Trust by design
+
+Wrkstrm is built to be understandable and auditable.
+
+- Privacy, data handling, and permissions are documented.
+- Terms and support expectations are explicit.
 
 ## Topics
 
@@ -36,6 +68,10 @@ the documentation that makes those tools understandable and auditable.
 
 - <doc:history>
 - <doc:ecosystem>
+
+### Brand & design
+
+- <doc:docc-design-system>
 
 ### Trust and support
 
