@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Ecosystem icon</title>
+  <desc id="desc">Philographics icon for articles-ecosystem.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B6CA8"/>
+      <stop offset="100%" stop-color="#14213D"/>
+    </linearGradient>
+  </defs>
+  <rect x="74.24" y="168.96" width="156.16" height="76.80" rx="34.56" fill="#14213D" opacity="0.85"/>
+  <circle cx="163.84" cy="115.20" r="56.32" fill="#F4ACB7" opacity="0.90"/>
+  <path d="M 138.24 99.84 L 179.20 171.52 L 248.32 71.68 Z" fill="#F4ACB7" opacity="0.60"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Privacy Policy card</title>
+  <desc id="desc">Philographics card for articles-privacy-policy.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A6F97"/>
+      <stop offset="100%" stop-color="#0E3A53"/>
+    </linearGradient>
+  </defs>
+  <rect x="192.00" y="284.00" width="324.00" height="148.00" rx="72.52" fill="#0E3A53" opacity="0.85"/>
+  <circle cx="498.00" cy="136.00" r="56.00" fill="#E5989B" opacity="0.90"/>
+  <path d="M 336.00 160.00 L 528.00 220.00 L 552.00 132.00 Z" fill="#E5989B" opacity="0.60"/>
+</svg>

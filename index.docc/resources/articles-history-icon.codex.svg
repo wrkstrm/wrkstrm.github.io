@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">History icon</title>
+  <desc id="desc">Philographics icon for articles-history.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A6F97"/>
+      <stop offset="100%" stop-color="#5E548E"/>
+    </linearGradient>
+  </defs>
+  <rect x="71.68" y="158.72" width="115.20" height="56.32" rx="19.71" fill="#5E548E" opacity="0.85"/>
+  <circle cx="184.32" cy="128.00" r="46.08" fill="#ADB5BD" opacity="0.90"/>
+  <path d="M 145.92 102.40 L 202.24 174.08 L 232.96 76.80 Z" fill="#ADB5BD" opacity="0.60"/>
+</svg>

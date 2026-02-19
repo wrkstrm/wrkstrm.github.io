@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Support icon</title>
+  <desc id="desc">Philographics icon for articles-support.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A6F97"/>
+      <stop offset="100%" stop-color="#5E548E"/>
+    </linearGradient>
+  </defs>
+  <rect x="64.00" y="171.52" width="135.68" height="58.88" rx="20.61" fill="#5E548E" opacity="0.85"/>
+  <circle cx="192.00" cy="133.12" r="43.52" fill="#ADB5BD" opacity="0.90"/>
+  <path d="M 145.92 107.52 L 240.64 171.52 L 238.08 79.36 Z" fill="#ADB5BD" opacity="0.60"/>
+</svg>

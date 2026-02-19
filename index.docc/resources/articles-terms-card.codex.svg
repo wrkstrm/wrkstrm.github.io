@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" role="img" aria-labelledby="title desc">
+  <title id="title">Terms card</title>
+  <desc id="desc">Philographics card for articles-terms.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A6F97"/>
+      <stop offset="100%" stop-color="#0E3A53"/>
+    </linearGradient>
+  </defs>
+  <rect x="150.00" y="256.00" width="312.00" height="88.00" rx="36.08" fill="#0E3A53" opacity="0.85"/>
+  <circle cx="354.00" cy="192.00" r="76.00" fill="#E5989B" opacity="0.90"/>
+  <path d="M 366.00 124.00 L 480.00 212.00 L 588.00 108.00 Z" fill="#E5989B" opacity="0.60"/>
+</svg>

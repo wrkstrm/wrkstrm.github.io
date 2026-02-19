@@ -6,11 +6,11 @@
   @TechnologyRoot
   @TitleHeading("Engineering Ecosystem")
   @Available(platform: macOS, introduced: "1.0")
-  @PageImage(purpose: icon, source: "svg-philographics-focus-icon", alt: "Wrkstrm")
-  @PageImage(purpose: card, source: "svg-philographics-focus-card", alt: "Wrkstrm")
+  @PageImage(purpose: icon, source: "svg-philographics-focus-icon.svg", alt: "Wrkstrm")
+  @PageImage(purpose: card, source: "svg-philographics-focus-card.svg", alt: "Wrkstrm")
 }
 
-@Image(source: "svg-philographics-focus-hero", alt: "Wrkstrm")
+@Image(source: "svg-philographics-focus-hero.svg", alt: "Wrkstrm")
 
 @Options {
   @TopicsVisualStyle(detailedGrid)
