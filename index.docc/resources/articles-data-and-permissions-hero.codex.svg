@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Data and permissions hero</title>
+  <desc id="desc">Philographics hero for articles-data-and-permissions.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A6F97"/>
+      <stop offset="100%" stop-color="#5E548E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)" opacity="1"/>
+  <rect x="348.00" y="348.00" width="600.00" height="174.00" rx="76.56" fill="#5E548E" opacity="0.78"/>
+  <circle cx="792.00" cy="318.00" r="150.00" fill="#ADB5BD" opacity="0.90"/>
+  <path d="M 756.00 210.00 L 912.00 348.00 L 1104.00 204.00 Z" fill="#ADB5BD" opacity="0.55"/>
+</svg>

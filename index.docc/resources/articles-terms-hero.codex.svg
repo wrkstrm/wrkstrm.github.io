@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Terms hero</title>
+  <desc id="desc">Philographics hero for articles-terms.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2A6F97"/>
+      <stop offset="100%" stop-color="#0E3A53"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)" opacity="1"/>
+  <rect x="300.00" y="402.00" width="708.00" height="228.00" rx="91.20" fill="#0E3A53" opacity="0.78"/>
+  <circle cx="792.00" cy="234.00" r="126.00" fill="#E5989B" opacity="0.90"/>
+  <path d="M 780.00 222.00 L 936.00 414.00 L 1128.00 174.00 Z" fill="#E5989B" opacity="0.55"/>
+</svg>

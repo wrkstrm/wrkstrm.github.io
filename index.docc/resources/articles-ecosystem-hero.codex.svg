@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Ecosystem hero</title>
+  <desc id="desc">Philographics hero for articles-ecosystem.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1B6CA8"/>
+      <stop offset="100%" stop-color="#14213D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#bg)" opacity="1"/>
+  <rect x="228.00" y="354.00" width="576.00" height="204.00" rx="77.52" fill="#14213D" opacity="0.78"/>
+  <circle cx="852.00" cy="336.00" r="144.00" fill="#F4ACB7" opacity="0.90"/>
+  <path d="M 672.00 222.00 L 864.00 342.00 L 1164.00 180.00 Z" fill="#F4ACB7" opacity="0.55"/>
+</svg>

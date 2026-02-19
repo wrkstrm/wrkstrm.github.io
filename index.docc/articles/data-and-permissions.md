@@ -1,5 +1,21 @@
 # Data and permissions
 
+@Metadata {
+  @PageKind(article)
+  @PageColor(gray)
+  @TitleHeading("Data and permissions")
+  @PageImage(purpose: icon, source: "articles-data-and-permissions-icon.codex.svg", alt: "Data and permissions icon")
+  @PageImage(purpose: card, source: "articles-data-and-permissions-card.codex.svg", alt: "Data and permissions card")
+}
+
+@Options {
+  @AutomaticSeeAlso(disabled)
+}
+
+
+
+@Image(source: "articles-data-and-permissions-hero.codex.svg", alt: "Data and permissions hero")
+
 Wrkstrm is designed to minimize data collection.
 
 ## Data

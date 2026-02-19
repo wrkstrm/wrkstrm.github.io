@@ -1,5 +1,21 @@
 # History
 
+@Metadata {
+  @PageKind(article)
+  @PageColor(gray)
+  @TitleHeading("History")
+  @PageImage(purpose: icon, source: "articles-history-icon.codex.svg", alt: "History icon")
+  @PageImage(purpose: card, source: "articles-history-card.codex.svg", alt: "History card")
+}
+
+@Options {
+  @AutomaticSeeAlso(disabled)
+}
+
+
+
+@Image(source: "articles-history-hero.codex.svg", alt: "History hero")
+
 Wrkstrm is the product of a long-running obsession with making work *repeatable*.
 
 It draws from three kinds of environments:
