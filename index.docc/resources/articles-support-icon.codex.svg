@@ -1,13 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
   <title id="title">Support icon</title>
-  <desc id="desc">Philographics icon for articles-support.</desc>
+  <desc id="desc">Wrkstrm Philographics icon for articles-support (agenda:blue).</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2A6F97"/>
-      <stop offset="100%" stop-color="#5E548E"/>
+      <stop offset="0%" stop-color="#3b72e3"/>
+      <stop offset="100%" stop-color="#0B0F14"/>
     </linearGradient>
   </defs>
-  <rect x="64.00" y="171.52" width="135.68" height="58.88" rx="20.61" fill="#5E548E" opacity="0.85"/>
-  <circle cx="192.00" cy="133.12" r="43.52" fill="#ADB5BD" opacity="0.90"/>
-  <path d="M 145.92 107.52 L 240.64 171.52 L 238.08 79.36 Z" fill="#ADB5BD" opacity="0.60"/>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <path d="M 32 0 L 32 256" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 64 0 L 64 256" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 96 0 L 96 256" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 128 0 L 128 256" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 160 0 L 160 256" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 192 0 L 192 256" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 224 0 L 224 256" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 0 32 L 256 32" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 0 64 L 256 64" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 0 96 L 256 96" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 0 128 L 256 128" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 0 160 L 256 160" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 0 192 L 256 192" stroke="#5188f5" stroke-width="1" opacity="0.1"/><path d="M 0 224 L 256 224" stroke="#5188f5" stroke-width="1" opacity="0.1"/>
+
+  <path d="M 56.32 71.68 L 158.72 87.04 L 112.64 179.20 Z" fill="none" stroke="#6ea5ff" stroke-width="2" opacity="0.45"/>
+  <circle cx="56.32" cy="71.68" r="6" fill="#6ea5ff" opacity="0.85"/>
+  <circle cx="158.72" cy="87.04" r="6" fill="#6ea5ff" opacity="0.85"/>
+  <circle cx="112.64" cy="179.20" r="6" fill="#6ea5ff" opacity="0.85"/>
+
+  <rect x="53.76" y="148.48" width="153.60" height="94.72" rx="32.20" fill="#5188f5" opacity="0.70"/>
+  <circle cx="209.92" cy="145.92" r="48.64" fill="#6ea5ff" opacity="0.30"/>
+  <path d="M 166.40 81.92 L 184.32 151.04 L 243.20 84.48 Z" fill="#6ea5ff" opacity="0.18"/>
 </svg>

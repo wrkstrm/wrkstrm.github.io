@@ -1,13 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
   <title id="title">Terms icon</title>
-  <desc id="desc">Philographics icon for articles-terms.</desc>
+  <desc id="desc">Wrkstrm Philographics icon for articles-terms (agenda:red).</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2A6F97"/>
-      <stop offset="100%" stop-color="#0E3A53"/>
+      <stop offset="0%" stop-color="#df2921"/>
+      <stop offset="100%" stop-color="#0B0F14"/>
     </linearGradient>
   </defs>
-  <rect x="64.00" y="163.84" width="133.12" height="56.32" rx="23.09" fill="#0E3A53" opacity="0.85"/>
-  <circle cx="151.04" cy="122.88" r="48.64" fill="#E5989B" opacity="0.90"/>
-  <path d="M 156.16 79.36 L 204.80 135.68 L 250.88 69.12 Z" fill="#E5989B" opacity="0.60"/>
+  <rect width="256" height="256" fill="url(#bg)"/>
+  <path d="M 32 0 L 32 256" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 64 0 L 64 256" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 96 0 L 96 256" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 128 0 L 128 256" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 160 0 L 160 256" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 192 0 L 192 256" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 224 0 L 224 256" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 0 32 L 256 32" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 0 64 L 256 64" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 0 96 L 256 96" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 0 128 L 256 128" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 0 160 L 256 160" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 0 192 L 256 192" stroke="#eb412d" stroke-width="1" opacity="0.1"/><path d="M 0 224 L 256 224" stroke="#eb412d" stroke-width="1" opacity="0.1"/>
+
+  <path d="M 56.32 71.68 L 158.72 87.04 L 112.64 179.20 Z" fill="none" stroke="#fb613d" stroke-width="2" opacity="0.45"/>
+  <circle cx="56.32" cy="71.68" r="6" fill="#fb613d" opacity="0.85"/>
+  <circle cx="158.72" cy="87.04" r="6" fill="#fb613d" opacity="0.85"/>
+  <circle cx="112.64" cy="179.20" r="6" fill="#fb613d" opacity="0.85"/>
+
+  <rect x="64.00" y="171.52" width="151.04" height="97.28" rx="38.91" fill="#eb412d" opacity="0.70"/>
+  <circle cx="168.96" cy="99.84" r="53.76" fill="#fb613d" opacity="0.30"/>
+  <path d="M 166.40 94.72 L 199.68 176.64 L 240.64 74.24 Z" fill="#fb613d" opacity="0.18"/>
 </svg>

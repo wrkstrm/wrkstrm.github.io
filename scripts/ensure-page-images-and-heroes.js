@@ -37,16 +37,52 @@ function hash32(str) {
   return h >>> 0;
 }
 
-const palettes = [
-  { dark: '#0E3A53', mid: '#2A6F97', light: '#E5989B' },
-  { dark: '#1B263B', mid: '#2D6A4F', light: '#B8F2E6' },
-  { dark: '#5E548E', mid: '#2A6F97', light: '#ADB5BD' },
-  { dark: '#1F1F1F', mid: '#B23A48', light: '#F8F4EE' },
-  { dark: '#14213D', mid: '#1B6CA8', light: '#F4ACB7' },
-];
+// Wrkstrm agenda colors (5) are derived from WrkstrmColor Palette+Legacy.
+// Mapping (Palette.Wrkstrm.rawValue -> Palette.Gradient.rawValue):
+// physical=0 -> red, work=1 -> green, social=2 -> blue, deadTime=3 -> black, recovery=4 -> white.
+const gradients = {
+  red:   { start: [215, 25, 25],  cutoff: 4, endMul: [10, 20, 10] },
+  green: { start: [25, 190, 25],  cutoff: 5, endMul: [10, 10, 10] },
+  blue:  { start: [45, 100, 215], cutoff: 6, endMul: [12, 12, 10] },
+  black: { start: [65, 65, 65],   cutoff: 7, endMul: [8, 8, 8] },
+  white: { start: [200, 200, 200],cutoff: 6, endMul: [6, 6, 6] },
+};
+const agenda = ['red','green','blue','black','white'];
 
-function pick(arr, seed) {
-  return arr[seed % arr.length];
+function rgbFor(gradientName, index, count, reversed=false) {
+  const g = gradients[gradientName];
+  let newIndex = index;
+  let newCount = count;
+  if (reversed) newIndex = newCount - newIndex;
+
+  const [sR,sG,sB] = g.start;
+  const cutoff = g.cutoff;
+  const [mR,mG,mB] = g.endMul;
+  const end = [sR + cutoff*mR, sG + cutoff*mG, sB + cutoff*mB];
+
+  let delta = 1.0 / cutoff;
+  if (newCount > cutoff) delta = 1.0 / newCount;
+  else newCount = cutoff;
+
+  const s = delta * (newCount - newIndex);
+  const e = delta * newIndex;
+
+  const [eR,eG,eB] = end;
+  return [sR*s + eR*e, sG*s + eG*e, sB*s + eB*e];
+}
+
+function toHex([r,g,b]) {
+  const c = (x)=>Math.max(0,Math.min(255,Math.round(x))).toString(16).padStart(2,'0');
+  return `#${c(r)}${c(g)}${c(b)}`;
+}
+
+function agendaPalette(seed) {
+  const name = agenda[seed % agenda.length];
+  // choose 3 samples along the gradient
+  const dark  = toHex(rgbFor(name, 2, 10));
+  const mid   = toHex(rgbFor(name, 5, 10));
+  const light = toHex(rgbFor(name, 9, 10));
+  return { name, dark, mid, light };
 }
 
 function fmt(n) {
@@ -75,7 +111,7 @@ function titleFromMd(mdText, fallback) {
 
 function genShapes({ w, h, slug }) {
   const seed = hash32(slug);
-  const pal = pick(palettes, seed);
+  const pal = agendaPalette(seed);
 
   const rectW = w * (0.45 + ((seed >>> 3) % 16) / 100);
   const rectH = h * (0.24 + ((seed >>> 7) % 16) / 100);
@@ -102,21 +138,46 @@ function genShapes({ w, h, slug }) {
   };
 }
 
+function gridLines(w,h, step, stroke, opacity) {
+  let out='';
+  for (let x=step; x<w; x+=step) out += `<path d="M ${x} 0 L ${x} ${h}" stroke="${stroke}" stroke-width="1" opacity="${opacity}"/>`;
+  for (let y=step; y<h; y+=step) out += `<path d="M 0 ${y} L ${w} ${y}" stroke="${stroke}" stroke-width="1" opacity="${opacity}"/>`;
+  return out;
+}
+
 function svgIcon(slug, title) {
   const w = 256, h = 256;
   const { pal, rect, circle, tri } = genShapes({ w, h, slug });
+  const seed = hash32(slug);
+  const ink = '#0B0F14';
+  const stroke = pal.light;
+  const gStep = 32;
+
+  // Node-link motif
+  const n1 = { x: w*0.22, y: h*0.28 };
+  const n2 = { x: w*0.62, y: h*0.34 };
+  const n3 = { x: w*0.44, y: h*0.70 };
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(title)} icon</title>
-  <desc id="desc">Philographics icon for ${escapeXml(slug)}.</desc>
+  <desc id="desc">Wrkstrm Philographics icon for ${escapeXml(slug)} (agenda:${pal.name}).</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="${pal.mid}"/>
-      <stop offset="100%" stop-color="${pal.dark}"/>
+      <stop offset="0%" stop-color="${pal.dark}"/>
+      <stop offset="100%" stop-color="${ink}"/>
     </linearGradient>
   </defs>
-  <rect x="${fmt(rect.x)}" y="${fmt(rect.y)}" width="${fmt(rect.w)}" height="${fmt(rect.h)}" rx="${fmt(rect.rx)}" fill="${pal.dark}" opacity="0.85"/>
-  <circle cx="${fmt(circle.cx)}" cy="${fmt(circle.cy)}" r="${fmt(circle.r)}" fill="${pal.light}" opacity="0.90"/>
-  <path d="M ${fmt(tri.p1x)} ${fmt(tri.p1y)} L ${fmt(tri.p2x)} ${fmt(tri.p2y)} L ${fmt(tri.p3x)} ${fmt(tri.p3y)} Z" fill="${pal.light}" opacity="0.60"/>
+  <rect width="${w}" height="${h}" fill="url(#bg)"/>
+  ${gridLines(w,h,gStep, pal.mid, 0.10)}
+
+  <path d="M ${fmt(n1.x)} ${fmt(n1.y)} L ${fmt(n2.x)} ${fmt(n2.y)} L ${fmt(n3.x)} ${fmt(n3.y)} Z" fill="none" stroke="${stroke}" stroke-width="2" opacity="0.45"/>
+  <circle cx="${fmt(n1.x)}" cy="${fmt(n1.y)}" r="6" fill="${stroke}" opacity="0.85"/>
+  <circle cx="${fmt(n2.x)}" cy="${fmt(n2.y)}" r="6" fill="${stroke}" opacity="0.85"/>
+  <circle cx="${fmt(n3.x)}" cy="${fmt(n3.y)}" r="6" fill="${stroke}" opacity="0.85"/>
+
+  <rect x="${fmt(rect.x)}" y="${fmt(rect.y)}" width="${fmt(rect.w)}" height="${fmt(rect.h)}" rx="${fmt(rect.rx)}" fill="${pal.mid}" opacity="0.70"/>
+  <circle cx="${fmt(circle.cx)}" cy="${fmt(circle.cy)}" r="${fmt(circle.r)}" fill="${pal.light}" opacity="0.30"/>
+  <path d="M ${fmt(tri.p1x)} ${fmt(tri.p1y)} L ${fmt(tri.p2x)} ${fmt(tri.p2y)} L ${fmt(tri.p3x)} ${fmt(tri.p3y)} Z" fill="${pal.light}" opacity="0.18"/>
 </svg>
 `;
 }
@@ -124,18 +185,40 @@ function svgIcon(slug, title) {
 function svgCard(slug, title) {
   const w = 600, h = 400;
   const { pal, rect, circle, tri } = genShapes({ w, h, slug });
+  const ink = '#0B0F14';
+  const gStep = 48;
+
+  // Layer + graph motif
+  const x0 = w*0.16, y0=h*0.22;
+  const layerW=w*0.62, layerH=h*0.16;
+
+  const n1 = { x: w*0.20, y: h*0.66 };
+  const n2 = { x: w*0.46, y: h*0.54 };
+  const n3 = { x: w*0.72, y: h*0.62 };
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(title)} card</title>
-  <desc id="desc">Philographics card for ${escapeXml(slug)}.</desc>
+  <desc id="desc">Wrkstrm Philographics card for ${escapeXml(slug)} (agenda:${pal.name}).</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="${pal.mid}"/>
+      <stop offset="0%" stop-color="${ink}"/>
       <stop offset="100%" stop-color="${pal.dark}"/>
     </linearGradient>
   </defs>
-  <rect x="${fmt(rect.x)}" y="${fmt(rect.y)}" width="${fmt(rect.w)}" height="${fmt(rect.h)}" rx="${fmt(rect.rx)}" fill="${pal.dark}" opacity="0.85"/>
-  <circle cx="${fmt(circle.cx)}" cy="${fmt(circle.cy)}" r="${fmt(circle.r)}" fill="${pal.light}" opacity="0.90"/>
-  <path d="M ${fmt(tri.p1x)} ${fmt(tri.p1y)} L ${fmt(tri.p2x)} ${fmt(tri.p2y)} L ${fmt(tri.p3x)} ${fmt(tri.p3y)} Z" fill="${pal.light}" opacity="0.60"/>
+  <rect width="${w}" height="${h}" fill="url(#bg)"/>
+  ${gridLines(w,h,gStep, pal.mid, 0.08)}
+
+  <rect x="${fmt(x0)}" y="${fmt(y0)}" width="${fmt(layerW)}" height="${fmt(layerH)}" rx="14" fill="${pal.mid}" opacity="0.45"/>
+  <rect x="${fmt(x0+18)}" y="${fmt(y0+34)}" width="${fmt(layerW)}" height="${fmt(layerH)}" rx="14" fill="${pal.mid}" opacity="0.32"/>
+
+  <path d="M ${fmt(n1.x)} ${fmt(n1.y)} L ${fmt(n2.x)} ${fmt(n2.y)} L ${fmt(n3.x)} ${fmt(n3.y)}" fill="none" stroke="${pal.light}" stroke-width="2" opacity="0.35"/>
+  <circle cx="${fmt(n1.x)}" cy="${fmt(n1.y)}" r="7" fill="${pal.light}" opacity="0.75"/>
+  <circle cx="${fmt(n2.x)}" cy="${fmt(n2.y)}" r="7" fill="${pal.light}" opacity="0.75"/>
+  <circle cx="${fmt(n3.x)}" cy="${fmt(n3.y)}" r="7" fill="${pal.light}" opacity="0.75"/>
+
+  <rect x="${fmt(rect.x)}" y="${fmt(rect.y)}" width="${fmt(rect.w)}" height="${fmt(rect.h)}" rx="${fmt(rect.rx)}" fill="${pal.mid}" opacity="0.30"/>
+  <circle cx="${fmt(circle.cx)}" cy="${fmt(circle.cy)}" r="${fmt(circle.r)}" fill="${pal.light}" opacity="0.14"/>
+  <path d="M ${fmt(tri.p1x)} ${fmt(tri.p1y)} L ${fmt(tri.p2x)} ${fmt(tri.p2y)} L ${fmt(tri.p3x)} ${fmt(tri.p3y)} Z" fill="${pal.light}" opacity="0.10"/>
 </svg>
 `;
 }
@@ -143,19 +226,39 @@ function svgCard(slug, title) {
 function svgHero(slug, title) {
   const w = 1200, h = 600;
   const { pal, rect, circle, tri } = genShapes({ w, h, slug });
+  const ink = '#070A0F';
+  const gStep = 80;
+
+  // Pipeline motif
+  const px = w*0.12, py=h*0.22;
+  const pw = w*0.76, ph=h*0.10;
+
+  const n1 = { x: w*0.20, y: h*0.68 };
+  const n2 = { x: w*0.46, y: h*0.56 };
+  const n3 = { x: w*0.72, y: h*0.64 };
+  const n4 = { x: w*0.88, y: h*0.44 };
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">
   <title id="title">${escapeXml(title)} hero</title>
-  <desc id="desc">Philographics hero for ${escapeXml(slug)}.</desc>
+  <desc id="desc">Wrkstrm Philographics hero for ${escapeXml(slug)} (agenda:${pal.name}).</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="${pal.mid}"/>
+      <stop offset="0%" stop-color="${ink}"/>
       <stop offset="100%" stop-color="${pal.dark}"/>
     </linearGradient>
   </defs>
-  <rect width="${w}" height="${h}" fill="url(#bg)" opacity="1"/>
-  <rect x="${fmt(rect.x)}" y="${fmt(rect.y)}" width="${fmt(rect.w)}" height="${fmt(rect.h)}" rx="${fmt(rect.rx)}" fill="${pal.dark}" opacity="0.78"/>
-  <circle cx="${fmt(circle.cx)}" cy="${fmt(circle.cy)}" r="${fmt(circle.r)}" fill="${pal.light}" opacity="0.90"/>
-  <path d="M ${fmt(tri.p1x)} ${fmt(tri.p1y)} L ${fmt(tri.p2x)} ${fmt(tri.p2y)} L ${fmt(tri.p3x)} ${fmt(tri.p3y)} Z" fill="${pal.light}" opacity="0.55"/>
+  <rect width="${w}" height="${h}" fill="url(#bg)"/>
+  ${gridLines(w,h,gStep, pal.mid, 0.06)}
+
+  <rect x="${fmt(px)}" y="${fmt(py)}" width="${fmt(pw)}" height="${fmt(ph)}" rx="18" fill="${pal.mid}" opacity="0.28"/>
+  <rect x="${fmt(px+26)}" y="${fmt(py+42)}" width="${fmt(pw)}" height="${fmt(ph)}" rx="18" fill="${pal.mid}" opacity="0.20"/>
+
+  <path d="M ${fmt(n1.x)} ${fmt(n1.y)} L ${fmt(n2.x)} ${fmt(n2.y)} L ${fmt(n3.x)} ${fmt(n3.y)} L ${fmt(n4.x)} ${fmt(n4.y)}" fill="none" stroke="${pal.light}" stroke-width="3" opacity="0.30"/>
+  ${[n1,n2,n3,n4].map(n=>`<circle cx="${fmt(n.x)}" cy="${fmt(n.y)}" r="10" fill="${pal.light}" opacity="0.55"/>`).join('')}
+
+  <rect x="${fmt(rect.x)}" y="${fmt(rect.y)}" width="${fmt(rect.w)}" height="${fmt(rect.h)}" rx="${fmt(rect.rx)}" fill="${pal.mid}" opacity="0.18"/>
+  <circle cx="${fmt(circle.cx)}" cy="${fmt(circle.cy)}" r="${fmt(circle.r)}" fill="${pal.light}" opacity="0.10"/>
+  <path d="M ${fmt(tri.p1x)} ${fmt(tri.p1y)} L ${fmt(tri.p2x)} ${fmt(tri.p2y)} L ${fmt(tri.p3x)} ${fmt(tri.p3y)} Z" fill="${pal.light}" opacity="0.08"/>
 </svg>
 `;
 }
@@ -222,12 +325,11 @@ for (const file of walk(catalogDir)) {
   const cardPath = path.join(resourcesDir, `${slug}-card.codex.svg`);
   const heroPath = path.join(resourcesDir, `${slug}-hero.codex.svg`);
 
-  if (!fs.existsSync(iconPath)) fs.writeFileSync(iconPath, svgIcon(slug, title), 'utf8');
-  if (!fs.existsSync(cardPath)) fs.writeFileSync(cardPath, svgCard(slug, title), 'utf8');
-  if (!fs.existsSync(heroPath)) {
-    fs.writeFileSync(heroPath, svgHero(slug, title), 'utf8');
-    heroWritten++;
-  }
+  // Always (re)generate assets to match current brand profile.
+  fs.writeFileSync(iconPath, svgIcon(slug, title), 'utf8');
+  fs.writeFileSync(cardPath, svgCard(slug, title), 'utf8');
+  fs.writeFileSync(heroPath, svgHero(slug, title), 'utf8');
+  heroWritten++;
 
   let updated = mdText;
   updated = ensureMetadataAndOptions(updated, slug, title);
