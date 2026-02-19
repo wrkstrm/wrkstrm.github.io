@@ -56,17 +56,17 @@ jobs:
             <meta charset="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <title>Wrkstrm</title>
-            <meta name="description" content="Wrkstrm — documentation."/>
+            <meta name="description" content="Wrkstrm is a mobile engineering practice with over a decade of production experience."/>
             <link rel="canonical" href="https://wrkstrm.com/"/>
 
             <meta property="og:type" content="website"/>
             <meta property="og:title" content="Wrkstrm"/>
-            <meta property="og:description" content="Wrkstrm — documentation."/>
+            <meta property="og:description" content="Wrkstrm is a mobile engineering practice with over a decade of production experience."/>
             <meta property="og:image" content="https://github.com/wrkstrm.png?size=512"/>
 
             <meta name="twitter:card" content="summary_large_image"/>
             <meta name="twitter:title" content="Wrkstrm"/>
-            <meta name="twitter:description" content="Wrkstrm — documentation."/>
+            <meta name="twitter:description" content="Wrkstrm is a mobile engineering practice with over a decade of production experience."/>
             <meta name="twitter:image" content="https://github.com/wrkstrm.png?size=512"/>
 
             <meta http-equiv="refresh" content="0; url=/documentation/index/"/>
@@ -85,7 +85,7 @@ jobs:
           <body>
             <div class="wrap">
               <div class="title">Wrkstrm</div>
-              <div class="sub">Loading documentation…</div>
+              <div class="sub">Mobile engineering, over a decade in production.</div>
             </div>
           </body>
           </html>
