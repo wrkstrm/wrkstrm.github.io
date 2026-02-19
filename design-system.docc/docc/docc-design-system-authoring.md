@@ -23,6 +23,23 @@ Authoring conventions for DocC articles and tutorials.
 - Use `@Options { @TopicsVisualStyle(list|compactGrid|detailedGrid|hidden) }` for Topics layout.
 - Disable auto sections only when you provide an explicit alternative.
 
+## Call To Action (CTA)
+
+When a page has a single obvious external destination (for example, a DocC page that represents a Discord thread), prefer a **CTA** in `@Metadata` over burying a raw URL in body text.
+
+Example:
+
+```swift
+@Metadata {
+  @PageKind(article)
+  @CallToAction(url: "https://discord.com/channels/<guild>/<thread>", label: "Open in Discord")
+}
+```
+
+Notes:
+- Keep the label action-oriented ("Open in Discord", "View issue", etc.).
+- If you also need the URL in the body for auditability, render it as an autolink: `<https://…>`.
+
 ## Link Syntax
 
 - Use double backticks for real symbols, not DocC article slugs.
