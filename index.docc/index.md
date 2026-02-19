@@ -69,10 +69,6 @@ Wrkstrm is built to be understandable and auditable.
 - <doc:history>
 - <doc:ecosystem>
 
-### Brand & design
-
-- <doc:docc-design-system>
-
 ### Trust and support
 
 - <doc:support>

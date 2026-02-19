@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
-  <title id="title">wrkstrm hero</title>
-  <desc id="desc">Geometric system design representation for wrkstrm</desc>
-  <!-- Background -->
-  
-  
-  <text x="600" y="320" text-anchor="middle" font-family="SFMono-Regular, Menlo, Monaco, Consolas, monospace" 
-    font-size="56" fill="#1E1E1E" opacity="0.9">wrkstrm</text>
-</svg>
