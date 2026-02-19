@@ -37,8 +37,8 @@ This page establishes a **clear, non-overlapping directory taxonomy** for DocC a
 **Canonical sources (authoring):**
 
 - mono: `code/mono/provisioned/<slug>-<series>/<bundle>.docc/…`
-  - example: `code/mono/provisioned/wrkstrm-design-system-0/wrkstrm-design-system.docc/`
-  - example: `code/mono/provisioned/git-design-system-0/git-design-system.docc/`
+  - example: `code/mono/provisioned/wrkstrm-design-system-0/wrkstrm.design.docc/`
+  - example: `code/mono/provisioned/git-design-system-0/git.design.docc/`
 
 **Generated deploy repos (tool output):**
 

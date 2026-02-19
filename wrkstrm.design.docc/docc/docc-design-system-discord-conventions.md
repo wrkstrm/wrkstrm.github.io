@@ -10,7 +10,7 @@ This page has moved.
 
 New canonical location:
 
-- `design-system.docc/discord/design-system-discord-conventions.md`
+- `wrkstrm.design.docc/discord/design-system-discord-conventions.md`
 
 ## Design decision: Operators are Agents (no separate category)
 
